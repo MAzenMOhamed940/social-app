@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "@heroui/styles"; 
+
+@theme {
+  --color-main-color: #37d67a;
+}
+
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+/* bg-[#E8F5E9] */
+ /* hover:bg-green-600 transition-colors duration-300 */
+
+
+ .active{
+  color: white;
+  background-color: oklch(62.7% 0.194 149.214);
+ }
