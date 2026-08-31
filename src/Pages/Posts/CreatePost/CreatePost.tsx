@@ -52,11 +52,9 @@ const createPostMutation = useMutation({
 
   return (
     <div className="w-full mx-auto my-8 bg-white border border-gray-200 rounded-2xl shadow-sm p-5 font-sans">
-      {/* Title Header */}
       <h2 className="text-lg font-bold text-gray-900 mb-4">Create Post</h2>
 
       <div className="space-y-4">
-        {/* User Info Row */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm">
             <img src={userData?.photo} alt="" />
@@ -67,7 +65,6 @@ const createPostMutation = useMutation({
           </div>
         </div>
 
-        {/* Input Area */}
         <input
           type="text"
           value={post}
@@ -99,7 +96,6 @@ const createPostMutation = useMutation({
           </label>
         </div>
 
-        {/* Action Button */}
         <img src={uploadedImage} className="w-full" />
         <button onClick={createPost} className="w-full py-2.5 bg-main-color hover:bg-green-500 cursor-pointer text-white text-sm font-bold rounded-xl shadow-sm transition-colors">
           Post

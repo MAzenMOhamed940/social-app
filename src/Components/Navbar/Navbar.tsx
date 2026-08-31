@@ -35,7 +35,7 @@ export default function Navbar() {
           to="/posts"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="/public/logo2.png" className="h-10" alt="Flowbite Logo" />
+          <img src="/logo2.png" className="h-10" alt="Flowbite Logo" />
           <span className="self-center text-xl text-heading font-semibold whitespace-nowrap text-main-color">
             Social App
           </span>

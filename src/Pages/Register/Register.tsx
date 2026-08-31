@@ -74,7 +74,6 @@ export default function Register() {
       },
     });
   }
-  // lg:container lg:mx-auto lg:px-90 md:px-20  py-5 bg-[#E8F5E9]
   return (
     <div className="">
       <Form
@@ -82,7 +81,7 @@ export default function Register() {
         onSubmit={handleSubmit(handelUSerSubmit)}
       >
         <div className="flex items-center justify-center">
-          <img src="/public/logo2.png" alt="" className="lg:w-40 w-30" />
+          <img src="/logo2.png" alt="" className="lg:w-40 w-30" />
           <p className="lg:text-3xl text-2xl text-center font-bold p-3 text-main-color">
             Social App
           </p>

@@ -4,6 +4,7 @@ import { Man, Woman } from "iconsax-reactjs";
 import { InfinitySpin } from "react-loader-spinner";
 import PostCard from "../../Components/PostCard/PostCard";
 import type { Post } from "../Posts/Posts";
+import toast from "react-hot-toast";
 
 export default function ProfilePage() {
   async function getAllPosts() {
@@ -11,7 +12,7 @@ export default function ProfilePage() {
       const response = await axiosInter.get("/posts");
       return response.data.data.posts;
     } catch (error) {
-      console.log("error: ", error);
+      toast.error("Failed To Get Your Posts")
     }
   }
   async function getMyProfile() {
@@ -38,7 +39,6 @@ export default function ProfilePage() {
     (post: Post) => post.user?._id === user?._id,
   );
 
-  console.log(userPosts);
 
   const dateFormatter = (dateString: string) => {
     const date = new Date(dateString);
