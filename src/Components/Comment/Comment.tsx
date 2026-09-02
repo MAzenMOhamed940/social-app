@@ -95,7 +95,7 @@ export default function Comment({
 
   return (
     <>
-      <div className="flex gap-3 text-sm w-full">
+      <div className="flex gap-3 text-sm w-80 md:w-full">
         <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0">
           <img
             src={_comment.commentCreator.photo}
@@ -144,45 +144,48 @@ export default function Comment({
             ""
           )}
           {isEditing ? (
-            <div className="flex gap-2 mt-2">
-              <input
-                type="text"
-                value={editedComment}
-                onChange={(e) => setEditedComment(e.target.value)}
-                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 outline-none focus:border-main-color"
-              />
-              <input
-                id={`comment-file-${_comment._id}`}
-                type="file"
-                onChange={(e) => {
-                  setFile(e.target.files?.[0] || null);
-                }}
-                className="hidden w-full pl-4 pr-20 py-1.5 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-main-color focus:ring-1 focus:ring-main-color placeholder-gray-400"
-              />
-              <label
-                htmlFor={`comment-file-${_comment._id}`}
-                className="cursor-pointer border-2 rounded-md flex items-center p-1 border-main-color"
-              >
-                <Image size="22" color="green" />
-              </label>
+            <div className="flex flex-col gap-2 mt-2 w-70 md:w-full">
+              <div className="flex items-center gap-2">
+                <input
+                  type="text"
+                  value={editedComment}
+                  onChange={(e) => setEditedComment(e.target.value)}
+                  className="flex-1 w-full border border-gray-300 rounded-lg px-3 py-2 outline-none focus:border-main-color"
+                />
+                <input
+                  id={`comment-file-${_comment._id}`}
+                  type="file"
+                  onChange={(e) => {
+                    setFile(e.target.files?.[0] || null);
+                  }}
+                  className="hidden w-full pl-4 pr-20 py-1.5 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-main-color focus:ring-1 focus:ring-main-color placeholder-gray-400"
+                />
+                <label
+                  htmlFor={`comment-file-${_comment._id}`}
+                  className="cursor-pointer border-2 w-fit rounded-md  my-3 flex items-center p-1 border-main-color"
+                >
+                  <Image size="22" color="green" />
+                </label>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={handleUpdate}
+                  disabled={updateCommentMutation.isPending}
+                  className="px-3 py-1 w-full bg-main-color text-white rounded-lg cursor-pointer hover:bg-green-600 duration-300 transition-colors"
+                >
+                  {updateCommentMutation.isPending ? "Saving..." : "Save"}
+                </button>
 
-              <button
-                onClick={handleUpdate}
-                disabled={updateCommentMutation.isPending}
-                className="px-3 py-1 bg-main-color text-white rounded-lg"
-              >
-                {updateCommentMutation.isPending ? "Saving..." : "Save"}
-              </button>
-
-              <button
-                onClick={() => {
-                  setEditedComment(_comment.content);
-                  setIsEditing(false);
-                }}
-                className="px-3 py-1 bg-gray-300 rounded-lg"
-              >
-                Cancel
-              </button>
+                <button
+                  onClick={() => {
+                    setEditedComment(_comment.content);
+                    setIsEditing(false);
+                  }}
+                  className="px-3 py-1 w-full bg-gray-300 rounded-lg cursor-pointer hover:bg-gray-400 duration-300 transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           ) : (
             ""

@@ -329,7 +329,7 @@ export default function PostCard({
           {post.topComment && !postDetails && (
             <Comment comment={post.topComment} postDetails={postDetails}/>
           )}
-          <div className=" flex flex-col gap-3">
+          <div className="flex flex-col gap-3">
           <img
             src={uploadedCommentImage}
             alt="Uploaded comment"

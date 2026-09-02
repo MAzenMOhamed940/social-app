@@ -32,7 +32,7 @@ export interface User {
 export interface TopComment {
   _id: string;
   content: string;
-  image: string
+  image: string;
   commentCreator: CommentCreator;
   post: string;
   parentComment: any;
@@ -53,7 +53,7 @@ export default function Posts() {
       const response = await axiosInter.get("/posts");
       return response.data.data.posts;
     } catch (error) {
-      toast.error("failed to Get All Posts")
+      toast.error("failed to Get All Posts");
     }
   }
 
@@ -66,11 +66,10 @@ export default function Posts() {
     return <InfinitySpin width="200" color="#4fa94d" />;
   }
 
-
   return (
     <>
       <div className="flex flex-col gap-3 w-full p-2 sm:w-3/4 lg:w-130">
-      <CreatePost/>
+        <CreatePost />
         {data?.map((post: any) => (
           <PostCard key={post._id} post={post} />
         ))}
