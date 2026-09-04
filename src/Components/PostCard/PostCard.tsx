@@ -163,7 +163,7 @@ export default function PostCard({
         </div>
         
             {userData?._id === post.user._id && (
-        <div className="flex gap-3 my-2 ms-50">
+        <div className="flex gap-3 my-2 ms-auto">
           <button
             onClick={handleDeletePost}
             disabled={deletePostMutation.isPending}
