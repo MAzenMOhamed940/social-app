@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[E8F5E9] w-full z-50 top-0 inset-s-0 border-2 relative ">
-      <div className="max-w-7xl flex md:flex-wrap items-center justify-between mx-auto p-4">
+      <div className={`max-w-7xl flex ${userData? "flex-wrap" : "flex-nowrap"} items-center justify-between mx-auto p-4`}>
         <Link
           to="/posts"
           className="flex items-center space-x-3 rtl:space-x-reverse"
