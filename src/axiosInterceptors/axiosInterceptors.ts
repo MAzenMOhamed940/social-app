@@ -27,6 +27,7 @@ axiosInter.interceptors.response.use(
 
   function (error) {
     if(error.response && error.response.status === 401){
+      localStorage.removeItem("tkn");
         router.navigate("/login")
     }
     return Promise.reject(error);

@@ -51,6 +51,10 @@ export default function Posts() {
   async function getAllPosts() {
     try {
       const response = await axiosInter.get("/posts");
+      if ((response.data.message === "success")) {
+        console.log("faail");
+      }
+
       return response.data.data.posts;
     } catch (error) {
       toast.error("failed to Get All Posts");
